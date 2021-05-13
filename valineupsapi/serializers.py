@@ -13,5 +13,8 @@ class LineupSerializer(serializers.HyperlinkedModelSerializer):
             'agentLocation',
             'abilitySite',
             'abilityLocation',
-            'side' 
+            'gamePhase',
+            'url',
+            'start',
+            'end', 
         )

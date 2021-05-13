@@ -10,4 +10,8 @@ class Lineup(models.Model):
     agentLocation = models.CharField(max_length=60)
     abilitySite = models.CharField(max_length=60)
     abilityLocation = models.CharField(max_length=60)
-    side = models.BooleanField()
+    gamePhase = models.CharField(max_length=60, default="")
+    url = models.CharField(max_length=200, default="")
+    start = models.IntegerField(default=0)
+    end = models.IntegerField(default=0)
+    
