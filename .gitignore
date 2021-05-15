@@ -1,3 +1,10 @@
 /env
+<<<<<<< HEAD
 .vscode/
 .DS_Store
+=======
+/build
+/dist
+
+**/__pycache__/
+>>>>>>> ae3f411b00f4522afda3607af5775bf3b325843e
