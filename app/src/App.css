@@ -1,62 +1,90 @@
-.App {
+.header {
+  background-color: black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div {
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.agentSelectScreen {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  text-align: center;
 }
 
 .agentSelect {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .agentPanel {
+  padding-left:50px;
+}
+
+.agentPanel:hover {
+  opacity: 0.5;
+}
+
+.agentSelect div:nth-child(1) {
+  padding-left: 0;
+}
+
+.logo {
+  display: block;
+  padding-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mapSelectionScreen {
+  min-height: 100vh;
   text-align: center;
-  padding-left:50px
 }
 
 .mapSelection {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
 
 .valorantMap {
-  text-align: center;
-  width:20%;
+  width: 25%;
+  padding-left: 20px;
 }
 
-.valorantMap img{
-  width:100%
+.valorantMap img {
+  width:100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.valorantMap:hover {
+  opacity: 0.5;
 }
+
+.agentLineupsScreen {
+  min-height: 100vh;
+}
+
+.agentLineupsScreen .agentHeaderImage {
+  display: block;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agentLineups {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.agentLineup {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  padding: 20px 20px 20px 20px;
+}
+
+
