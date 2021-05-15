@@ -13,7 +13,8 @@ cd app
 npm install
 ```
 To run dev server:
-```source env/bin/activate
+```
+source env/bin/activate
 python manage.py runserver
 ```
 To run the app locally:
