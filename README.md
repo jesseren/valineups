@@ -12,9 +12,14 @@ python -m pip install django-cors-headers
 cd app
 npm install
 ```
-To run dev server:
+To run dev server (Mac):
 ```
 source env/bin/activate
+python manage.py runserver
+```
+To run dev server (Windows):
+```
+.\env\Scripts\activate
 python manage.py runserver
 ```
 To run the app locally:
