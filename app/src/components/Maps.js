@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import ValorantMap from "./ValorantMap"
 import Header from './Header'
 
 function Maps(props) {
+    const { agent } = props.location.state
     const maps = props.maps;
     const mapSelection = maps.map((valorantMap) => 
         <ValorantMap key={valorantMap.name} name={valorantMap.name} link="/Maps" imgurl={valorantMap.image} />
     );
+    console.log(agent)
     return (
         <div className="mapSelectionScreen">
             <Header />
