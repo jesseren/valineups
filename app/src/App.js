@@ -1,8 +1,10 @@
 import AgentSelect from './components/AgentSelect'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+
+import './App.css';
+
 import Maps from "./components/Maps"
 import Agent from"./components/Agent"
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
-import './App.css';
 
 const agents = [
   {name: "Brimstone", panel: "images/Valorant_Brimstone_Card.jpeg"},
@@ -21,21 +23,31 @@ const maps = [
   {name: "Haven", image: "images/Loading_Screen_Split.png"}
 ]
 
+// function App() {
+//   return (
+//     <Router>
+//       <Switch>
+//         <Route exact path="/">
+//           <AgentSelect agents={agents} />
+//         </Route>
+//         <Route exact path="/Maps">
+//           <Maps maps={maps}/>
+//         </Route>
+//         <Route exact path="/Sova">
+//           <Agent />
+//         </Route>
+//       </Switch>
+//     </Router>
+//   );
+// }
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <AgentSelect agents={agents} />
-        </Route>
-        <Route exact path="/Maps">
-          <Maps maps={maps}/>
-        </Route>
-        <Route exact path="/Sova">
-          <Agent />
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route exact path="/" component={AgentSelect} />
+      <Route exact path="/Maps" component={Maps} />
+      <Route exact path="/Sova" component={Agent}/>
+    </Switch>
   );
 }
 
