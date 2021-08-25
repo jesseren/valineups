@@ -8,15 +8,15 @@ const maps = [
     {name: "Breeze", image: "images/Loading_Screen_Breeze.png"},
     {name: "Haven", image: "images/Loading_Screen_Haven.png"},
     {name: "Icebox", image: "images/Loading_Screen_Icebox.png"},
-    {name: "Haven", image: "images/Loading_Screen_Split.png"}
+    {name: "Split", image: "images/Loading_Screen_Split.png"}
   ]
 
 function Maps(props) {
-    // const { agent } = props.location.state
+    const agent = props.location.state.agent
     const mapSelection = maps.map((valorantMap) => 
         <ValorantMap key={valorantMap.name} name={valorantMap.name} link="/Maps" imgurl={valorantMap.image} />
     );
-    console.log(props)
+    console.log(agent)
     return (
         <div className="mapSelectionScreen">
             <Header />
