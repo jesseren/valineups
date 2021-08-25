@@ -1,8 +1,10 @@
 import AgentSelect from './components/AgentSelect'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import { Provider } from 'react-redux'
 
 import './App.css';
 
+import store from './store/store';
 import Maps from "./components/Maps"
 import Agent from"./components/Agent"
 
@@ -27,11 +29,13 @@ import Agent from"./components/Agent"
 
 function App() {
   return (
-    <Switch>
-      <Route exact path="/" component={AgentSelect} />
-      <Route exact path="/Maps" component={Maps} />
-      <Route exact path="/Sova" component={Agent}/>
-    </Switch>
+    <Provider store={store}>
+      <Switch>
+        <Route exact path="/" component={AgentSelect} />
+        <Route exact path="/Maps" component={Maps} />
+        <Route exact path="/Sova" component={Agent}/>
+      </Switch>
+    </Provider>
   );
 }
 

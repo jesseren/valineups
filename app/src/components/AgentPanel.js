@@ -1,18 +1,25 @@
 import React from "react"
 import {Link} from "react-router-dom"
+import store from "../store/store"
 
 function AgentPanel(props) {
     console.log(props.imgurl)
+    // console.log('Store', store)
+    function dispatchAgent() {
+        store.dispatch({ type: 'agent/selectAgent', payload: props.name })
+    }
+
     return (
         <div className="agentPanel">
             <h2>{props.name}</h2>
             <Link 
-                to={{
+                to={{ 
                     pathname: props.link,
-                    state: {agent: props.name},
                 }}
             >
-                <img src={props.imgurl} alt={props.name}/>
+                <span onClick={ dispatchAgent }>
+                    <img src={props.imgurl} alt={props.name}/>
+                </span>
             </Link>
         </div>
     )
