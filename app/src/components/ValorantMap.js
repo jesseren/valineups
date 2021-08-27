@@ -10,7 +10,7 @@ function ValorantMap(props) {
     return(
         <div className="valorantMap">
             <h2>{props.name}</h2>
-            <Link to="lineups">
+            <Link to="filters">
                 <span onClick={ dispatchMap }>
                     <img src={props.imgurl} alt={props.name}/>
                 </span>

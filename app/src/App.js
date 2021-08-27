@@ -3,10 +3,11 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import { Provider } from 'react-redux'
 
 import './App.css';
+import store from './store/store'
 
-import store from './store/store';
 import Maps from "./components/MapsPage"
 import Agent from"./components/LineupsPage"
+import LocationAbility from './components/LocationAbilityPage'
 
 // function App() {
 //   return (
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/" component={AgentSelect} />
         <Route exact path="/maps" component={Maps} />
         <Route exact path="/lineups" component={Agent}/>
+        <Route exact path="/filters" component={LocationAbility}/>
       </Switch>
     </Provider>
   );
