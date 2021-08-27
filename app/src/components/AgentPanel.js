@@ -12,11 +12,7 @@ function AgentPanel(props) {
     return (
         <div className="agentPanel">
             <h2>{props.name}</h2>
-            <Link 
-                to={{ 
-                    pathname: props.link,
-                }}
-            >
+            <Link to={{ pathname: props.link }}>
                 <span onClick={ dispatchAgent }>
                     <img src={props.imgurl} alt={props.name}/>
                 </span>
