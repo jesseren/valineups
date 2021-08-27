@@ -1,13 +1,12 @@
-import AgentSelect from './components/AgentSelect'
+import AgentSelect from './components/AgentSelectPage'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import { Provider } from 'react-redux'
 
 import './App.css';
 
 import store from './store/store';
-import Maps from "./components/Maps"
-import Agent from"./components/Agent"
-
+import Maps from "./components/MapsPage"
+import Agent from"./components/LineupsPage"
 
 // function App() {
 //   return (
@@ -32,8 +31,8 @@ function App() {
     <Provider store={store}>
       <Switch>
         <Route exact path="/" component={AgentSelect} />
-        <Route exact path="/Maps" component={Maps} />
-        <Route exact path="/Sova" component={Agent}/>
+        <Route exact path="/maps" component={Maps} />
+        <Route exact path="/lineups" component={Agent}/>
       </Switch>
     </Provider>
   );

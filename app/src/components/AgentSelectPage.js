@@ -12,7 +12,7 @@ const agents = [
 
 function AgentSelect(props) {
     const agentSelectionPanels = agents.map((agent) => 
-        <AgentPanel key={agent.name} name={agent.name} link="/Maps" imgurl={agent.panel} />
+        <AgentPanel key={agent.name} name={agent.name} link="/maps" imgurl={agent.panel} />
     );
     return (
         <div className='agentSelectScreen'>

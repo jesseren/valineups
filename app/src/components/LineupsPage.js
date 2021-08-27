@@ -19,8 +19,10 @@ function Agent(props) {
     
     console.log("Store", store.getState())
 
+    var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
+
     useEffect(() => {
-        fetch('http://localhost:8000/lineups/')
+        fetch(url)
             .then(response => response.json())
             .then(data => setLineups(data))
     }, [])
