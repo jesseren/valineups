@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import ValorantMap from "./ValorantMap"
 import Header from './Header'
+import store from "../store/store"
 
 const maps = [
     {name: "Ascent", image: "images/Loading_Screen_Ascent.png"},
@@ -12,11 +13,12 @@ const maps = [
   ]
 
 function Maps(props) {
-    const agent = props.location.state.agent
+    // const agent = props.location.state.agent
+    // console.log("Store", store.getState())
     const mapSelection = maps.map((valorantMap) => 
-        <ValorantMap key={valorantMap.name} name={valorantMap.name} link="/Maps" imgurl={valorantMap.image} />
+        <ValorantMap key={valorantMap.name} name={valorantMap.name} link="/maps" imgurl={valorantMap.image} />
     );
-    console.log(agent)
+    console.log(props)
     return (
         <div className="mapSelectionScreen">
             <Header />
