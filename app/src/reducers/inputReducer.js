@@ -12,6 +12,13 @@ export default function inputReducer(state, action) {
                 map: action.payload,
             }
         }
+        case 'filters/selectFilters': {
+            return {
+                ...state,
+                site: action.payload.site,
+                ability: action.payload.ability,
+            }
+        }
         default:
             return state
     }

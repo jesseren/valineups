@@ -18,7 +18,7 @@ function Maps(props) {
     const mapSelection = maps.map((valorantMap) => 
         <ValorantMap key={valorantMap.name} name={valorantMap.name} link="/maps" imgurl={valorantMap.image} />
     );
-    console.log(props)
+    //console.log(props)
     return (
         <div className="mapSelectionScreen">
             <Header />
@@ -31,5 +31,4 @@ function Maps(props) {
     );
 }
     
-
 export default Maps

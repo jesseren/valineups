@@ -32,7 +32,7 @@ function Agent(props) {
             <Header />
             <img className='agentHeaderImage'src='images/sova-valorant.jpeg' />
             <div className='agentLineups'>
-                {lineups.map((lineup) => <AgentLineup lineup={lineup}/>)}
+                {lineups.map((lineup) => <AgentLineup lineup={lineup} />)}
             </div>
         </div>
     )
