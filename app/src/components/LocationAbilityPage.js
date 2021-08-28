@@ -44,6 +44,14 @@ function LocationAbility(props) {
         <AbilityCard key={ability.key} name={ability.name} setAbility={setAbility} imgurl={ability.image} />
     )
 
+    function dispatchFilters() {
+        var payload = {
+            'site': selectedSite,
+            'ability': selectedAbility,
+        }
+        store.dispatch({ type: 'filters/selectFilters', payload: payload })
+    }
+
     return (
         <div className="mapSelectionScreen">
             <Header />
@@ -61,7 +69,9 @@ function LocationAbility(props) {
 
             <div className="nextButton">
                 <Link to="lineups">
-                    <p>Submit</p>
+                    <span onClick={ dispatchFilters }>
+                        <p>Submit</p>
+                    </span>
                 </Link>
             </div>
         </div>
