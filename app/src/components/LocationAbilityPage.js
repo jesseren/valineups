@@ -3,11 +3,24 @@ import { Link } from "react-router-dom"
 import Header from './Header'
 import store from "../store/store"
 
+import AbilityCard from "./AbilityCard"
+
 // might need to make component for sites
 const sites = ['a', 'b']
 
 const abilities = {
-    'Sova': ['Recon bolt', 'shock_dart', 'hunter_fury'],
+    'Sova': [
+        {
+            key: 'recon_bolt',
+            name:'Recon bolt',
+            image: '',
+        },
+        {
+            key: 'shock_dart',
+            name:'Shock dart',
+            image: '',
+        }, 
+    ],
     'Viper': ['snakebite', 'poison_gas'],
 }
 
@@ -28,12 +41,7 @@ function LocationAbility(props) {
     )
 
     const abilitySelection = abilities[selectedAgent].map((ability) => 
-        <div className="valorantMap"
-            onClick={() => setAbility(ability)}
-        >
-            <h2>test</h2>
-            { ability[0].toUpperCase() + ability.slice(1) } 
-        </div>
+        <AbilityCard key={ability.key} name={ability.name} setAbility={setAbility} imgurl={ability.image} />
     )
 
     return (

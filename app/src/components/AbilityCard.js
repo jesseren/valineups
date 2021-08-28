@@ -6,11 +6,9 @@ function AbilityCard(props) {
     return (
         <div className="valorantMap">
             <h2>{props.name}</h2>
-            <Link to={{ pathname: props.link }}>
-                <span onClick={ dispatchAgent }>
-                    <img src={props.imgurl} alt={props.name}/>
-                </span>
-            </Link>
+            <span onClick={ () => props.setAbility( props.key ) }>
+                <img src={props.imgurl} alt={props.name}/>
+            </span>
         </div>
     )
 }
