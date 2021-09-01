@@ -3,7 +3,7 @@ import React from "react"
 
 function AbilityCard(props) {
     return (
-        <div className="valorantMap">
+        <div className="ability_container">
             <h2>{props.name}</h2>
             <span onClick={() => props.setAbility( props.name )}>
                 <img src={props.imgurl} alt={props.name}/>
