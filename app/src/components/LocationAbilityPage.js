@@ -57,6 +57,15 @@ const abilities = {
     'Sage': [
         // todo
     ],
+    'Jett': [
+        // todo
+    ],
+    'Raze': [
+        // todo
+    ],
+    'Kayo': [
+        // todo
+    ],
 }
 
 function LocationAbility(props) {
