@@ -111,5 +111,13 @@ div {
 .ability_container {
   width: 15%;
   margin: 20px;
+  color: aliceblue;
+  background-color: black;
+}
+
+.ability_container_selected {
+  width: 15%;
+  margin: 20px;
+  color: aliceblue;
   background-color: red;
 }

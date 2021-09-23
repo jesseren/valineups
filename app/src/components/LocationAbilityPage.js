@@ -85,7 +85,7 @@ function LocationAbility(props) {
     )
 
     const abilitySelection = abilities[selectedAgent].map((ability) => 
-        <AbilityCard key={ability.key} name={ability.name} setAbility={setAbility} imgurl={'images/abilities/' + ability.image} />
+        <AbilityCard key={ability.key} name={ability.name} selectedAbility={selectedAbility} setAbility={setAbility} imgurl={'images/abilities/' + ability.image} />
     )
 
     function dispatchFilters() {
