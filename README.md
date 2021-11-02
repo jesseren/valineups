@@ -15,11 +15,13 @@ npm install
 To run dev server (Mac):
 ```
 source env/bin/activate
+python manage.py migrate
 python manage.py runserver
 ```
 To run dev server (Windows):
 ```
 .\env\Scripts\activate
+python manage.py migrate
 python manage.py runserver
 ```
 To run the app locally:
