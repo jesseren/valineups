@@ -3,11 +3,13 @@ import React from "react"
 
 function AbilityCard(props) {
     return (
-        <div className="valorantMap">
+        // <div className="ability_container">
+        <div 
+            className={`ability_container${ props.selectedAbility == props.name ? '_selected':'' }`}
+            onClick={() => props.setAbility( props.name )}
+        >
             <h2>{props.name}</h2>
-            <span onClick={() => props.setAbility( props.name )}>
-                <img src={props.imgurl} alt={props.name}/>
-            </span>
+            <img src={props.imgurl} alt={props.name}/>
         </div>
     )
 }

@@ -8,20 +8,64 @@ import AbilityCard from "./AbilityCard"
 // might need to make component for sites
 const sites = ['a', 'b']
 
+// https://valorant.fandom.com/wiki/Category:Ability_Images
 const abilities = {
+    'Brimstone': [
+        {
+            key: 'incendiary',
+            name:'Incendiary',
+            image: 'Incendiary.png',
+        },
+    ],
+    'Viper': [
+        {
+            key: 'snake_bite',
+            name:'Snake bite',
+            image: 'Snake_Bite.png',
+        },
+        {
+            key: 'poison_orb',
+            name:'Poison orb',
+            image: 'Poison_Cloud.png',
+        }, 
+    ],
+    'Omen': [
+        // todo blind
+    ],
+    'Killjoy': [
+        {
+            key: 'nanoswarm',
+            name:'Nanoswarm',
+            image: 'Nanoswarm.png',
+        },
+    ],
+    'Cypher': [
+        // todo
+    ],
     'Sova': [
         {
             key: 'recon_bolt',
             name:'Recon bolt',
-            image: '',
+            image: 'Recon_Bolt.png',
         },
         {
             key: 'shock_dart',
             name:'Shock dart',
-            image: '',
+            image: 'Shock_Bolt.png',
         }, 
     ],
-    'Viper': ['snakebite', 'poison_gas'],
+    'Sage': [
+        // todo
+    ],
+    'Jett': [
+        // todo
+    ],
+    'Raze': [
+        // todo
+    ],
+    'Kayo': [
+        // todo
+    ],
 }
 
 function LocationAbility(props) {
@@ -41,7 +85,7 @@ function LocationAbility(props) {
     )
 
     const abilitySelection = abilities[selectedAgent].map((ability) => 
-        <AbilityCard key={ability.key} name={ability.name} setAbility={setAbility} imgurl={ability.image} />
+        <AbilityCard key={ability.key} name={ability.name} selectedAbility={selectedAbility} setAbility={setAbility} imgurl={'images/abilities/' + ability.image} />
     )
 
     function dispatchFilters() {

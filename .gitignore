@@ -3,6 +3,7 @@
 .DS_Store
 /build
 /dist
+db.sqlite3
 
 **/__pycache__/
 **/.env
