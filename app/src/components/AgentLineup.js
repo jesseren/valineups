@@ -13,6 +13,8 @@ function AgentLineup(props) {
     function getVideoId(url) {
         return url.substring(url.indexOf('be/') + 3)
     }
+
+    console.log('lineup', props.lineup)
     
     return(
         <div className="agentLineup">

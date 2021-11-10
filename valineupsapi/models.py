@@ -1,7 +1,7 @@
 from django.db import models
 
 class Lineup(models.Model):
-    id = models.AutoField(primary_key=True)
+    lineup_id = models.AutoField(primary_key=True)
     agent = models.CharField(max_length=60)
     gameMap = models.CharField(max_length=60)
     ability = models.CharField(max_length=60)
