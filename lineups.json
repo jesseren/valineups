@@ -1,0 +1,17 @@
+[
+    {
+        "model": "valineupsapi.lineup",
+        "fields": {
+            "agent": "sova",
+            "gameMap": "ascent",
+            "ability": "recon_bolt",
+            "agentLocation": "a_main",
+            "abilitySite": "a",
+            "abilityLocation": "a_site",
+            "gamePhase": ["attacking", "retake"],
+            "url": "https://youtu.be/Ejz3T8TTSKA",
+            "start": 152,
+            "end": 172
+        }
+    }
+]
