@@ -4,12 +4,12 @@ import Header from './Header'
 import store from "../store/store"
 
 const maps = [
-    {name: "Ascent", image: "images/Loading_Screen_Ascent.png"},
-    {name: "Bind", image: "images/Loading_Screen_Bind.png"},
-    {name: "Breeze", image: "images/Loading_Screen_Breeze.png"},
-    {name: "Haven", image: "images/Loading_Screen_Haven.png"},
-    {name: "Icebox", image: "images/Loading_Screen_Icebox.png"},
-    {name: "Split", image: "images/Loading_Screen_Split.png"}
+    {name: "Ascent", image: "images/map_loading/Loading_Screen_Ascent.png"},
+    {name: "Bind", image: "images/map_loading/Loading_Screen_Bind.png"},
+    {name: "Breeze", image: "images/map_loading/Loading_Screen_Breeze.png"},
+    {name: "Haven", image: "images/map_loading/Loading_Screen_Haven.png"},
+    {name: "Icebox", image: "images/map_loading/Loading_Screen_Icebox.png"},
+    {name: "Split", image: "images/map_loading/Loading_Screen_Split.png"}
   ]
 
 function Maps(props) {
