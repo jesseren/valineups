@@ -99,7 +99,7 @@ function LocationAbility(props) {
     return (
         <div className="mapSelectionScreen">
             <Header />
-            <img className='logo' src='images/Valorant_logo.png' />
+            <img className='logo' src='images/Valineups_logo.png' />
 
             <h1>Select the site</h1> 
             <div className="mapSelection">
