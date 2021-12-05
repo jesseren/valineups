@@ -10,6 +10,7 @@ class Lineup(models.Model):
     abilityLocation = models.CharField(max_length=60)
     gamePhase = models.CharField(max_length=60, default="")
     url = models.CharField(max_length=200, default="")
+    image = models.CharField(max_length=100)
     start = models.IntegerField(default=0)
     end = models.IntegerField(default=0)
     
