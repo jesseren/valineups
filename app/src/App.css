@@ -43,6 +43,14 @@ div {
   margin-bottom: -3vh;
 }
 
+.agentPanelTitle {
+  width: 50px;
+}
+
+.agentPanelTitle h2 {
+  transform: rotate(-270deg);
+}
+
 .agentPanel:hover {
   opacity: 0.5;
 }
