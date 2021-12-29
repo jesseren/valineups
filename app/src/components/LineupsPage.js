@@ -6,15 +6,18 @@ import store from "../store/store"
 function Agent(props) {
     const [lineups, setLineups] = useState([{
         lineup_id: '',
-        ability: "",
-        abilityLocation: "",
-        abilitySite: "",
         agent: "",
-        agentLocation: "",
-        end: 0,
         gameMap: "",
-        gamePhase: "",
-        start: 0,
+        ability: "",
+        side: "",
+        roundPhase: "",
+        agentLocation: "",
+        agentX: 0,
+        agentY: 0,
+        abilitySite: "",
+        abilityLocation: "",
+        abilityX: 0,
+        abilityY: 0,
         url: "",
     }])
     

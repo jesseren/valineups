@@ -116,6 +116,11 @@ div {
   padding: 20px 20px 20px 20px;
 }
 
+.agentLineup img {
+  height: 25vh;
+  width: 20vw;
+}
+
 .ability_container {
   width: 15%;
   margin: 20px;
