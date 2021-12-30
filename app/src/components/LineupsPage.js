@@ -25,6 +25,15 @@ function Agent(props) {
 
     var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
 
+    if (store.getState().site != "") {
+        url += '&site='
+        url += store.getState().site
+    }
+    if (store.getState().ability != "") {
+        url += '&ability='
+        url += store.getState().ability
+    }
+
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
