@@ -28,7 +28,10 @@ function Agent(props) {
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
-            .then(data => setLineups(data))
+            .then((data) => {
+                setLineups(data)
+                console.log(data)
+            })
     }, [])
 
     return(
