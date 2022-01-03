@@ -129,3 +129,39 @@ div {
   color: aliceblue;
   background-color: red;
 }
+
+.filterSelectionScreen {
+  min-height: 100vh;
+  text-align: center;
+}
+
+.filterSelection {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filterMap {
+  width: 15%;
+  padding-bottom: 20px;
+  margin: 0 20px;
+  color: white;
+  background-color: black;
+}
+
+.filterMap_active {
+  width: 15%;
+  padding-bottom: 20px;
+  margin: 0 20px;
+  color: white;
+  background-color: red;
+}
+
+.filterMap img {
+  width:100%;
+}
+
+.filterMap:hover {
+  opacity: 0.5;
+}
