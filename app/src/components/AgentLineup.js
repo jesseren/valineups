@@ -16,7 +16,10 @@ function AgentLineup(props) {
                 <p>Round Phase: <b>{props.lineup.roundPhase}</b></p>
                 <p>Video: <a href={props.lineup.url}>{props.lineup.url}</a></p>
             </div>
-            <div onClick={() => setShowModal(true)}>
+            <div onClick={() => {
+                setShowModal(true)
+                setSelectedPic(0)
+            }}>
                 <MapLineupLocations mapSrc='images/Ascent_Callouts.jpeg' agentX={props.lineup.agentX} agentY={props.lineup.agentY} abilityX={props.lineup.abilityX} abilityY={props.lineup.abilityY} abilityRad={75}/>
             </div>
             <img src={'images/' + props.lineup.agent + '/' + props.lineup.gameMap + '/AbilityLocation/' + props.lineup.lineup_id + '.png' } alt = '' onClick={() => {
