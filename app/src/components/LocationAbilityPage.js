@@ -76,8 +76,10 @@ function LocationAbility(props) {
 
     // need logic for c site
     const siteSelection = sites.map((site) => 
-        <div className="filterMap" key={site}
-            onClick={() => setSite(site)}
+        <div className={(selectedSite==site?'filterMap_active':'filterMap')}  key={site}
+            onClick={() => {
+                setSite(site)
+            }}
         >
             <h2>test</h2>
             { site.toUpperCase() + ' Site' } 
