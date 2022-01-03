@@ -14,15 +14,15 @@ function MapLineupLocations(props) {
             context.fillStyle = "red"
             context.strokeStyle = "red"
             context.beginPath()
-            context.arc(props.agentX, props.agentY, 3, 0, 2 * Math.PI)
+            context.arc(props.agentX * 500, props.agentY * 500, 3, 0, 2 * Math.PI)
             context.fill()
             context.font = "12px Helvetica"
-            context.fillText("Sova", props.agentX + 10, props.agentY + 5)
+            context.fillText("Sova", props.agentX * 500 + 10, props.agentY * 500 + 5)
             context.beginPath()
-            context.arc(props.abilityX, props.abilityY, 3, 0, 2 * Math.PI)
+            context.arc(props.abilityX * 500, props.abilityY * 500, 3, 0, 2 * Math.PI)
             context.fill()
             context.beginPath()
-            context.arc(props.abilityX, props.abilityY, props.abilityRad, 0, 2 * Math.PI)
+            context.arc(props.abilityX * 500, props.abilityY * 500, props.abilityRad, 0, 2 * Math.PI)
             context.stroke()
         }
     }, [])

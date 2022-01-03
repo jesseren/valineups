@@ -4,7 +4,7 @@
 }
 
 div {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Inter, sans-serif;
 }
 
 .agentSelectScreen {
@@ -110,15 +110,34 @@ div {
 }
 
 .agentLineup {
+  display: flex;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 50px;
   padding: 20px 20px 20px 20px;
+  background-color: gainsboro;
+  border-radius: 25px;
 }
 
+.agentLineup .lineupInfo {
+  padding: 20px 20px 20px 20px;
+}
+
+.agentLineup canvas {
+  padding: 20px 20px 20px 20px;
+}
+
+.agentLineup canvas:hover {
+  opacity: 0.5;
+}
 .agentLineup img {
   height: 25vh;
   width: 20vw;
+  padding: 20px 20px 20px 20px;
+}
+
+.agentLineup img:hover {
+  opacity: 0.5;
 }
 
 .ability_container {
@@ -133,4 +152,12 @@ div {
   margin: 20px;
   color: aliceblue;
   background-color: red;
+}
+
+.ReactModalPortal .closeModal {
+  margin-left: 93vw;
+}
+
+.carousel-root {
+  background-color: black;
 }
