@@ -6,7 +6,7 @@ import store from "../store/store"
 import AbilityCard from "./AbilityCard"
 
 // might need to make component for sites
-const sites = ['a', 'b']
+const sites = ['A', 'B']
 
 // https://valorant.fandom.com/wiki/Category:Ability_Images
 const abilities = {
@@ -45,12 +45,12 @@ const abilities = {
     'Sova': [
         {
             key: 'recon_bolt',
-            name:'Recon bolt',
+            name:'Recon Bolt',
             image: 'Recon_Bolt.png',
         },
         {
             key: 'shock_dart',
-            name:'Shock dart',
+            name:'Shock Dart',
             image: 'Shock_Bolt.png',
         }, 
     ],

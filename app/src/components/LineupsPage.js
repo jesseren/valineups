@@ -6,15 +6,18 @@ import store from "../store/store"
 function Agent(props) {
     const [lineups, setLineups] = useState([{
         lineup_id: '',
-        ability: "",
-        abilityLocation: "",
-        abilitySite: "",
         agent: "",
-        agentLocation: "",
-        end: 0,
         gameMap: "",
-        gamePhase: "",
-        start: 0,
+        ability: "",
+        side: "",
+        roundPhase: "",
+        agentLocation: "",
+        agentX: 0,
+        agentY: 0,
+        abilitySite: "",
+        abilityLocation: "",
+        abilityX: 0,
+        abilityY: 0,
         url: "",
     }])
     
@@ -22,10 +25,22 @@ function Agent(props) {
 
     var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
 
+    if (store.getState().site != "") {
+        url += '&site='
+        url += store.getState().site
+    }
+    if (store.getState().ability != "") {
+        url += '&ability='
+        url += store.getState().ability
+    }
+
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
-            .then(data => setLineups(data))
+            .then((data) => {
+                setLineups(data)
+                console.log(data)
+            })
     }, [])
 
     return(
