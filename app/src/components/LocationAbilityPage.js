@@ -76,8 +76,10 @@ function LocationAbility(props) {
 
     // need logic for c site
     const siteSelection = sites.map((site) => 
-        <div className="valorantMap" key={site}
-            onClick={() => setSite(site)}
+        <div className={(selectedSite==site?'filterMap_active':'filterMap')}  key={site}
+            onClick={() => {
+                setSite(site)
+            }}
         >
             <h2>test</h2>
             { site.toUpperCase() + ' Site' } 
@@ -97,17 +99,17 @@ function LocationAbility(props) {
     }
 
     return (
-        <div className="mapSelectionScreen">
+        <div className="filterSelectionScreen">
             <Header />
             <img className='logo' src='images/Valineups_logo.png' />
 
             <h1>Select the site</h1> 
-            <div className="mapSelection">
+            <div className="filterSelection">
                 { siteSelection }
             </div>
 
             <h1>Select the ability</h1> 
-            <div className="mapSelection">
+            <div className="filterSelection">
                 { abilitySelection }
             </div>
 
