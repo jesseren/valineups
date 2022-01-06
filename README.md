@@ -16,6 +16,7 @@ npm install
 ### To setup db
 - download postgres https://www.postgresql.org/
 - log in to postgres (terminal)
+
 In psql:
 ```
 create user valineups_admin;
