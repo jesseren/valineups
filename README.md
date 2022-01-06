@@ -1,6 +1,6 @@
 # valineups
 
-To setup project:
+### To setup project:
 - clone repo
 - run
 ```
@@ -13,7 +13,7 @@ npm install
 ```
 
 
-To setup db
+### To setup db
 - download postgres https://www.postgresql.org/
 - log in to postgres (terminal)
 In psql:
@@ -33,22 +33,22 @@ ContentType.objects.all().delete()
 python manage.py loaddata dump.json
 ```
 
-To backup db 
+### To backup db 
 - python manage.py dumpdata > dump.json
 
-To run dev server (Mac):
+### To run dev server (Mac):
 ```
 source env/bin/activate
 python manage.py migrate
 python manage.py runserver
 ```
-To run dev server (Windows):
+### To run dev server (Windows):
 ```
 .\env\Scripts\activate
 python manage.py migrate
 python manage.py runserver
 ```
-To run the app locally:
+### To run the app locally:
 `npm start`
 
 
