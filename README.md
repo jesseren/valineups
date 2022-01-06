@@ -35,7 +35,7 @@ python manage.py loaddata dump.json
 ```
 
 ### To backup db 
-- python manage.py dumpdata > dump.json
+`python manage.py dumpdata > dump.json`
 
 ### To run dev server (Mac):
 ```
