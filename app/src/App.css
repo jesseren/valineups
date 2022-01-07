@@ -196,3 +196,27 @@ div {
 .filterMap:hover {
   opacity: 0.5;
 }
+
+.filterSection {
+  display: flex;
+}
+
+.filterButton {
+  background-color: rgb(241, 54, 54);
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+.filterOpen {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+input {
+  margin: 10px;
+}

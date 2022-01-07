@@ -34,10 +34,7 @@ function AgentLineup(props) {
                 setShowModal(true)
                 setSelectedPic(3)
             }}/>
-            <ReactModal 
-                isOpen={showModal}
-                contentLabel="Minimal Modal Example"
-                >
+            <ReactModal isOpen={showModal}>
                 <button className='closeModal' onClick={() => setShowModal(false)}>X</button>
                 <Carousel showArrows={true} showThumbs={false} selectedItem={selectedPic}>
                     <MapLineupLocations mapSrc='images/Ascent_Callouts.jpeg' agentX={props.lineup.agentX} agentY={props.lineup.agentY} abilityX={props.lineup.abilityX} abilityY={props.lineup.abilityY} abilityRad={75}/>
