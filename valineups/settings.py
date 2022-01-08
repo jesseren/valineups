@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'valineupsapi.apps.ValineupsapiConfig',
     'rest_framework',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
