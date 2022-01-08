@@ -14,5 +14,8 @@ class Lineup(models.Model):
     abilityLocation = models.CharField(max_length=60, default="")
     abilityX = models.FloatField(default=0)
     abilityY = models.FloatField(default=0)
+    abilityLocationUrl = models.CharField(max_length=1000, default="")
+    agentLocationUrl = models.CharField(max_length=1000, default="")
+    crosshairUrl = models.CharField(max_length=1000, default="")
     url = models.CharField(max_length=200, default="")
     
