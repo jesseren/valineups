@@ -62,21 +62,10 @@ function Agent(props) {
     console.log("Store", store.getState())
     // console.log(filters)
 
-    // var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&gameMap=' + store.getState().map
-
-    // if (store.getState().site != "") {
-    //     url += '&site='
-    //     url += store.getState().site
-    // }
-    // if (store.getState().ability != "") {
-    //     url += '&ability='
-    //     url += store.getState().ability
-    // }
-
-    // console.log(url)
+    var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&gameMap=' + store.getState().map
 
     function dispatchFilters() {
-        var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&gameMap=' + store.getState().map
+        url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&gameMap=' + store.getState().map
         for (const [ikey, ivalue] of Object.entries(filters)) {            
             url += '&' + ikey + '__in='
             // for (const [jkey, jvalue] of Object.entries(filters[ikey])) {
@@ -99,18 +88,14 @@ function Agent(props) {
         setShowFilter(false)
     }
 
-    // useEffect(() => {
-    //     fetch(url)
-    //         .then(response => response.json())
-    //         .then((data) => {
-    //             setLineups(data)
-    //             console.log('data', data)
-    //         })
-    // }, [])
-
-    // const [data, setData] = useState({
-    //     abilities: 
-    // })
+    useEffect(() => {
+        fetch(url)
+            .then(response => response.json())
+            .then((data) => {
+                setLineups(data)
+                console.log('data', data)
+            })
+    }, [])
 
     const abilityVals = []
     const sideVals = []
