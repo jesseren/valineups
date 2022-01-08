@@ -24,8 +24,8 @@ function Agent(props) {
     }])
 
     const [filters, setFilters] = useState({
-        abilities: constants.abilities[store.getState().agent],
-        sides: {
+        ability: constants.abilities[store.getState().agent],
+        side: {
             attacking: {
                 str: 'Attacking',
                 val: true,
@@ -35,7 +35,7 @@ function Agent(props) {
                 val: true,
             },
         },
-        roundPhases: {
+        roundPhase: {
             takeSite: {
                 str: 'Take_Site',
                 val: true,
@@ -53,28 +53,39 @@ function Agent(props) {
                 val: true,
             },
         },
-        agentLocations: JSON.parse(JSON.stringify(constants.mapLocations[store.getState().map])),
-        abilitySites: constants.sites[store.getState().map],
-        abilityLocations: JSON.parse(JSON.stringify(constants.mapLocations[store.getState().map])),
+        agentLocation: JSON.parse(JSON.stringify(constants.mapLocations[store.getState().map])),
+        abilitySite: constants.sites[store.getState().map],
+        abilityLocation: JSON.parse(JSON.stringify(constants.mapLocations[store.getState().map])),
     })
     const [showFilter, setShowFilter] = useState(false)
 
-    // console.log("Store", store.getState())
-    console.log(filters)
+    console.log("Store", store.getState())
+    // console.log(filters)
 
-    var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
-
-    if (store.getState().site != "") {
-        url += '&site='
-        url += store.getState().site
-    }
-    if (store.getState().ability != "") {
-        url += '&ability='
-        url += store.getState().ability
-    }
+    var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&gameMap=' + store.getState().map
 
     function dispatchFilters() {
-        url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
+        url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&gameMap=' + store.getState().map
+        for (const [ikey, ivalue] of Object.entries(filters)) {            
+            url += '&' + ikey + '__in='
+            // for (const [jkey, jvalue] of Object.entries(filters[ikey])) {
+            for (const [jkey, jvalue] of Object.entries(ivalue)) {    
+                if (jvalue.val) {
+                    url += jvalue.str + ','
+                }
+            }
+        }
+
+        console.log(url)
+        
+        fetch(url)
+            .then(response => response.json())
+            .then((data) => {
+                setLineups(data)
+                console.log('data', data)
+            })
+
+        setShowFilter(false)
     }
 
     useEffect(() => {
@@ -82,13 +93,9 @@ function Agent(props) {
             .then(response => response.json())
             .then((data) => {
                 setLineups(data)
-                console.log(data)
+                console.log('data', data)
             })
     }, [])
-
-    // const [data, setData] = useState({
-    //     abilities: 
-    // })
 
     const abilityVals = []
     const sideVals = []
@@ -97,22 +104,22 @@ function Agent(props) {
     const abilitySiteVals = []
     const abilityLocationVals = []
     
-    for (const ability in filters.abilities) {
+    for (const ability in filters.ability) {
         abilityVals.push(ability)
     }
-    for (const side in filters.sides) {
+    for (const side in filters.side) {
         sideVals.push(side)
     }
-    for (const roundPhase in filters.roundPhases) {
+    for (const roundPhase in filters.roundPhase) {
         roundPhaseVals.push(roundPhase)
     }
-    for (const agentLocation in filters.agentLocations) {
+    for (const agentLocation in filters.agentLocation) {
         agentLocationVals.push(agentLocation)
     }
-    for (const abilitySite in filters.abilitySites) {
+    for (const abilitySite in filters.abilitySite) {
         abilitySiteVals.push(abilitySite)
     }
-    for (const abilityLocation in filters.abilityLocations) {
+    for (const abilityLocation in filters.abilityLocation) {
         abilityLocationVals.push(abilityLocation)
     }
 
@@ -126,9 +133,9 @@ function Agent(props) {
         let filtersCopy = {...filters}
         let site = filtersCopy[section][field].str
         filtersCopy[section][field].val = !filtersCopy[section][field].val
-        for (const abilityLocation in filtersCopy.abilityLocations) {
-            if (filtersCopy.abilityLocations[abilityLocation].str.substring(0, site.length) === site) {
-                filtersCopy.abilityLocations[abilityLocation].val = filtersCopy[section][field].val
+        for (const location in filtersCopy.abilityLocation) {
+            if (filtersCopy.abilityLocation[location].str.substring(0, site.length) === site) {
+                filtersCopy.abilityLocation[location].val = filtersCopy[section][field].val
             }
         }
         setFilters(filtersCopy)
@@ -145,8 +152,8 @@ function Agent(props) {
                     {
                         abilityVals.map((field) => 
                         <div>
-                            <input type="checkbox" id={field} onClick={() => changeFilter('abilities', field)} checked={filters.abilities[field].val}/>
-                            <label for={field}>{filters.abilities[field].str}</label>
+                            <input type="checkbox" id={field} onClick={() => changeFilter('ability', field)} checked={filters.ability[field].val}/>
+                            <label for={field}>{filters.ability[field].str}</label>
                         </div>)
                     }
                     </div>
@@ -155,8 +162,8 @@ function Agent(props) {
                     {
                         sideVals.map((field) => 
                         <div>
-                            <input type="checkbox" id={field} onClick={() => changeFilter('sides', field)} checked={filters.sides[field].val}/>
-                            <label for={field}>{filters.sides[field].str}</label>
+                            <input type="checkbox" id={field} onClick={() => changeFilter('side', field)} checked={filters.side[field].val}/>
+                            <label for={field}>{filters.side[field].str}</label>
                         </div>)
                     }
                     </div>
@@ -165,8 +172,8 @@ function Agent(props) {
                     {
                         roundPhaseVals.map((field) => 
                         <div>
-                            <input type="checkbox" id={field} onClick={() => changeFilter('roundPhases', field)} checked={filters.roundPhases[field].val}/>
-                            <label for={field}>{filters.roundPhases[field].str}</label>
+                            <input type="checkbox" id={field} onClick={() => changeFilter('roundPhase', field)} checked={filters.roundPhase[field].val}/>
+                            <label for={field}>{filters.roundPhase[field].str}</label>
                         </div>)
                     }
                     </div>
@@ -175,8 +182,8 @@ function Agent(props) {
                     {
                         agentLocationVals.map((field) => 
                         <div>
-                            <input type="checkbox" id={field} onClick={() => changeFilter('agentLocations', field)} checked={filters.agentLocations[field].val}/>
-                            <label for={field}>{filters.agentLocations[field].str}</label>
+                            <input type="checkbox" id={field} onClick={() => changeFilter('agentLocation', field)} checked={filters.agentLocation[field].val}/>
+                            <label for={field}>{filters.agentLocation[field].str}</label>
                         </div>)
                     }
                     </div>
@@ -185,8 +192,8 @@ function Agent(props) {
                     {
                         abilitySiteVals.map((field) => 
                         <div>
-                            <input type="checkbox" id={field} onClick={() => changeSiteFilter('abilitySites', field)} checked={filters.abilitySites[field].val}/>
-                            <label for={field}>{filters.abilitySites[field].str}</label>
+                            <input type="checkbox" id={field} onClick={() => changeSiteFilter('abilitySite', field)} checked={filters.abilitySite[field].val}/>
+                            <label for={field}>{filters.abilitySite[field].str}</label>
                         </div>)
                     }
                     </div>
@@ -195,12 +202,12 @@ function Agent(props) {
                     {
                         abilityLocationVals.map((field) => 
                         <div>
-                            <input type="checkbox" id={field} onClick={() => changeFilter('abilityLocations', field)} checked={filters.abilityLocations[field].val}/>
-                            <label for={field}>{filters.abilityLocations[field].str}</label>
+                            <input type="checkbox" id={field} onClick={() => changeFilter('abilityLocation', field)} checked={filters.abilityLocation[field].val}/>
+                            <label for={field}>{filters.abilityLocation[field].str}</label>
                         </div>)
                     }
                     </div>
-                    <button className='filterButton' onClick={() => {setShowFilter(false) }}>Filter</button> 
+                    <button className='filterButton' onClick={() => {dispatchFilters()}}>Filter</button> 
                 </div>
             </ReactModal>
             <div className='agentLineups'>
