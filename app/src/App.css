@@ -102,15 +102,9 @@ div {
   margin-right: auto;
 }
 
-.agentLineups {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .agentLineup {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 50px;
@@ -120,24 +114,53 @@ div {
 }
 
 .agentLineup .lineupInfo {
-  padding: 20px 20px 20px 20px;
+  width: 10vw;
+  margin: 10px;
 }
 
 .agentLineup canvas {
-  padding: 20px 20px 20px 20px;
+  height: 40vh;
+  width: 22vw;
 }
 
+.agentLineup .map {
+  margin: 10px;
+}
 .agentLineup canvas:hover {
   opacity: 0.5;
 }
+
 .agentLineup img {
   height: 25vh;
-  width: 20vw;
-  padding: 20px 20px 20px 20px;
+  width: 18vw;
+  margin: 10px;
 }
 
 .agentLineup img:hover {
   opacity: 0.5;
+}
+
+@media only screen and (max-width: 900px) {
+  .agentLineup {
+    display: grid;
+  }
+  .agentLineup .lineupInfo {
+    height: 30vh;
+    width: 90vw;
+  }
+  
+  .agentLineup canvas {
+    height: 70vh;
+    width: 90vw;
+  }
+  .agentLineup img {
+    height: 70vh;
+    width: 90vw;
+  }
+  .carousel-root canvas {
+    height: 70vh;
+    width: 80vw;
+  }
 }
 
 .ability_container {
@@ -155,7 +178,7 @@ div {
 }
 
 .ReactModalPortal .closeModal {
-  margin-left: 93vw;
+  margin-left: 99%;
 }
 
 .carousel-root {
@@ -218,5 +241,9 @@ div {
 }
 
 input {
+  margin: 10px;
+}
+
+label {
   margin: 10px;
 }
