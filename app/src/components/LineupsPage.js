@@ -59,7 +59,8 @@ function Agent(props) {
     })
     const [showFilter, setShowFilter] = useState(false)
 
-    console.log("Store", store.getState())
+    // console.log("Store", store.getState())
+    console.log(filters)
 
     var url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
 
@@ -72,6 +73,10 @@ function Agent(props) {
         url += store.getState().ability
     }
 
+    function dispatchFilters() {
+        url = 'http://localhost:8000/lineups/?agent=' + store.getState().agent + '&map=' + store.getState().map
+    }
+
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
@@ -80,6 +85,10 @@ function Agent(props) {
                 console.log(data)
             })
     }, [])
+
+    // const [data, setData] = useState({
+    //     abilities: 
+    // })
 
     const abilityVals = []
     const sideVals = []
@@ -191,7 +200,7 @@ function Agent(props) {
                         </div>)
                     }
                     </div>
-                    <button className='filterButton' onClick={() => setShowFilter(false)}>Filter</button> 
+                    <button className='filterButton' onClick={() => {setShowFilter(false) }}>Filter</button> 
                 </div>
             </ReactModal>
             <div className='agentLineups'>
