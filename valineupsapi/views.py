@@ -19,4 +19,6 @@ class LineupView(generics.ListAPIView):
         'ability': ['in', 'exact'],
         'agentLocation': ['in', 'exact'],
         'abilityLocation': ['in', 'exact'],
+        'side': ['in', 'exact'],
+        'roundPhase': ['in', 'exact'],
     }

@@ -45,12 +45,12 @@ const abilities = {
     'Sova': [
         {
             key: 'recon_bolt',
-            name:'Recon Bolt',
+            name:'Recon_Bolt',
             image: 'Recon_Bolt.png',
         },
         {
             key: 'shock_dart',
-            name:'Shock Dart',
+            name:'Shock_Dart',
             image: 'Shock_Bolt.png',
         }, 
     ],
