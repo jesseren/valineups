@@ -23,5 +23,8 @@ class LineupSerializer(serializers.HyperlinkedModelSerializer):
             'abilityLocation',
             'abilityX',
             'abilityY',
+            'abilityLocationUrl',
+            'agentLocationUrl',
+            'crosshairUrl',
             'url',
         )

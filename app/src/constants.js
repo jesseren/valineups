@@ -11,6 +11,11 @@ const abilities = {
     },
 }
 
+const abilityRads = {
+    Recon_Bolt: 75, 
+    Shock_Dart: 15,
+}
+
 const mapLocations = {
     Ascent: {
         aLobby:  {
@@ -121,4 +126,4 @@ const sites = {
     }
 }
 
-export {abilities, mapLocations, sites}
+export {abilities, abilityRads, mapLocations, sites}
