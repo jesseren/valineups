@@ -9,6 +9,7 @@ function MapLineupLocations(props) {
 
         const canvas = canvasRef.current
         const context = canvas.getContext('2d')
+        console.log(props.abilityRad)
         img.onload = () => {
             context.drawImage(img,0,0, props.width, props.height)
             context.fillStyle = "red"
@@ -17,12 +18,12 @@ function MapLineupLocations(props) {
             context.arc(props.agentX * props.width, props.agentY * props.height, 3, 0, 2 * Math.PI)
             context.fill()
             context.font = "12px Helvetica"
-            context.fillText("Sova", props.agentX * props.width + 10, props.agentY * props.height + 5)
+            context.fillText(props.agent, props.agentX * props.width + 10, props.agentY * props.height + 5)
             context.beginPath()
             context.arc(props.abilityX * props.width, props.abilityY * props.height, 3, 0, 2 * Math.PI)
             context.fill()
             context.beginPath()
-            context.arc(props.abilityX * props.width, props.abilityY * props.height, props.abilityRad, 0, 2 * Math.PI)
+            context.arc(props.abilityX * props.width, props.abilityY * props.height, props.abilityRad * props.height, 0, 2 * Math.PI)
             context.stroke()
         }
     }, [])

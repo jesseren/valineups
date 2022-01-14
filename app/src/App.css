@@ -140,29 +140,6 @@ div {
   opacity: 0.5;
 }
 
-@media only screen and (max-width: 900px) {
-  .agentLineup {
-    display: grid;
-  }
-  .agentLineup .lineupInfo {
-    height: 30vh;
-    width: 90vw;
-  }
-  
-  .agentLineup canvas {
-    height: 70vh;
-    width: 90vw;
-  }
-  .agentLineup img {
-    height: 70vh;
-    width: 90vw;
-  }
-  .carousel-root canvas {
-    height: 70vh;
-    width: 80vw;
-  }
-}
-
 .ability_container {
   width: 15%;
   margin: 20px;
@@ -177,12 +154,17 @@ div {
   background-color: red;
 }
 
-.ReactModalPortal .closeModal {
+.closeModal {
   margin-left: 99%;
+  width: 30px;
+  text-align: center;
 }
 
 .carousel-root {
   background-color: black;
+}
+.carousel-root div{
+  height: 100%;
 }
 .filterSelectionScreen {
   min-height: 100vh;
@@ -224,6 +206,11 @@ div {
   display: flex;
 }
 
+.filterSection.mapLocations {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto
+}
+
 .filterButton {
   background-color: rgb(241, 54, 54);
   color: white;
@@ -232,6 +219,10 @@ div {
   border-radius: 5px;
   margin: 10px 0px;
   cursor: pointer;
+}
+
+.filterForm .filterButton {
+  margin-left: 45%;
 }
 
 .filterOpen {
@@ -244,6 +235,26 @@ input {
   margin: 10px;
 }
 
-label {
-  margin: 10px;
+.ReactModal__Content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 900px) {
+  .agentLineup {
+    display: grid;
+  }
+  .agentLineup .lineupInfo {
+    width: 80vw;
+  }
+  
+  .agentLineup canvas {
+    width: 80vw;
+  }
+  .agentLineup img {
+    width: 80vw;
+  }
+  .carousel-root div {
+    width: 100%;
+  }
 }

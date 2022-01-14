@@ -12,8 +12,8 @@ const abilities = {
 }
 
 const abilityRads = {
-    Recon_Bolt: 75, 
-    Shock_Dart: 15,
+    Recon_Bolt: .19, 
+    Shock_Dart: 0.03,
 }
 
 const mapLocations = {
@@ -50,6 +50,10 @@ const mapLocations = {
             str: 'A_Rafters',
             val: true,
         },
+        aDefault: {
+            str: 'A_Default',
+            val: true,
+        },
         bBack: {
             str: 'B_Back',
             val: true,
@@ -72,6 +76,10 @@ const mapLocations = {
         },
         bLobby:  {
             str: 'B_Lobby',
+            val: true,
+        },
+        bDefault: {
+            str: 'B_Default',
             val: true,
         },
         midMarket:  {
