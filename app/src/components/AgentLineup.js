@@ -25,15 +25,15 @@ function AgentLineup(props) {
             }}>
                 <MapLineupLocations mapSrc='images/Ascent_Callouts.jpeg' agent={props.lineup.agent} agentX={props.lineup.agentX} agentY={props.lineup.agentY} abilityX={props.lineup.abilityX} abilityY={props.lineup.abilityY} abilityRad={abilityRads[props.lineup.ability]} height={500} width={500}/>
             </div>
-            <img src={'images/' + props.lineup.agent + '/' + props.lineup.gameMap + '/AbilityLocation/' + props.lineup.lineup_id + '.png' } alt = '' onClick={() => {
+            <img src={props.lineup.abilityLocationUrlprops.lineup.abilityLocationUrl} alt = '' onClick={() => {
                 setShowModal(true)
                 setSelectedPic(1)
             }}/>
-            <img src={'images/' + props.lineup.agent + '/' + props.lineup.gameMap + '/AgentPosition/' + props.lineup.lineup_id + '.png'} alt = 'No Position Available' onClick={() => {
+            <img src={props.lineup.agentLocationUrl} alt = 'No Position Available' onClick={() => {
                 setShowModal(true)
                 setSelectedPic(2)
             }}/>
-            <img src={'images/' + props.lineup.agent + '/' + props.lineup.gameMap + '/Crosshair/' + props.lineup.lineup_id + '.png'} alt = '' onClick={() => {
+            <img src={props.lineup.crosshairUrl} alt = '' onClick={() => {
                 setShowModal(true)
                 setSelectedPic(3)
             }}/>
